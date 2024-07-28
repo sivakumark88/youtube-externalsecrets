@@ -1,4 +1,5 @@
-#Install external secrets operator in your k8s cluster using helm
+# Install external secrets operator in your k8s cluster using helm
+```
 helm repo add external-secrets https://charts.external-secrets.io
 
 helm install external-secrets \
@@ -6,8 +7,9 @@ helm install external-secrets \
     -n external-secrets \
     --create-namespace \
   # --set installCRDs=false
-
-#Example connect vault using token
+```
+# Example connect vault using token
+```
 apiVersion: external-secrets.io/v1beta1
 kind: SecretStore
 metadata:
@@ -33,9 +35,10 @@ metadata:
   name: vault-token
 data:
   token: cm9vdA== # "root"
+```
 
-
-#Example connect vault using approle
+# Example connect vault using approle
+```
 apiVersion: external-secrets.io/v1beta1
 kind: SecretStore
 metadata:
@@ -60,8 +63,10 @@ spec:
           secretRef:
             name: "my-secret"
             key: "secret-id"
+```
 
-#Example secretStore crd to connect AWS secret manager(secret provider)
+# Example secretStore crd to connect AWS secret manager(secret provider)
+```
 apiVersion: external-secrets.io/v1beta1
 kind: SecretStore
 metadata:
@@ -79,3 +84,4 @@ spec:
           secretAccessKeySecretRef:
             name: awssm-secret
             key: secret-access-key
+```
