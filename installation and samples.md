@@ -16,7 +16,7 @@ https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-minikube-r
 # Example connect vault using token
 ```
 apiVersion: external-secrets.io/v1beta1
-kind: SecretStore
+kind: clusterSecretStore
 metadata:
   name: vault-backend
 spec:
