@@ -8,6 +8,11 @@ helm install external-secrets \
     --create-namespace \
   # --set installCRDs=false
 ```
+
+# vault setup in minikube
+```
+https://developer.hashicorp.com/vault/tutorials/kubernetes/kubernetes-minikube-raft
+```
 # Example connect vault using token
 ```
 apiVersion: external-secrets.io/v1beta1
